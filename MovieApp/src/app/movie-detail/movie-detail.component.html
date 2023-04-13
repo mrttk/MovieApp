@@ -1,0 +1,13 @@
+<div class="card my-1" *ngIf="movie.id > 0">
+    <div class="card-body">
+        <span class="badge bg-warning text-dark">
+            Id: {{movie.id}} Name: {{movie.name}}
+        </span>
+        <div class="input-group my-1">
+            <input type="text" [(ngModel)]="movie.name" class="form-control me-2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-success" type="button">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
