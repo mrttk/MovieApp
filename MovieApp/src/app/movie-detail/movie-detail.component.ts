@@ -4,8 +4,8 @@ import { Movie } from '../movie';
 @Component({
   selector: 'movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  styleUrls: ['./movie-detail.component.css'],
 })
 export class MovieDetailComponent {
-  @Input() movie:Movie;
+  @Input() movie: Movie;
 }
