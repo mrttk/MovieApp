@@ -1,22 +1,22 @@
 <div class="card my-1" *ngIf="+movie!.id!>0">
     <div class="card-body">
-        <div class="form-group">
+        <div class="form-group mb-2">
             <span class="badge bg-warning text-dark">
                 Id: {{movie!.id!}}
             </span>
         </div>
-        <div class="form-group">
-            <label for="name"></label>
+        <div class="form-group mb-2">
+            <label for="name">Name</label>
             <input type="text" [(ngModel)]="movie!.name!" class="form-control">
         </div>
-        <div class="form-group">
-            <label for="imageUrl"></label>
+        <div class="form-group mb-2">
+            <label for="imageUrl">Image Url</label>
             <input type="text" [(ngModel)]="movie!.imageUrl!" class="form-control">
         </div>
-        <div class="form-group">
-            <label for="description"></label>
+        <div class="form-group mb-3">
+            <label for="description">Description</label>
             <textarea type="text" [(ngModel)]="movie!.description!" class="form-control"></textarea>
         </div>
-        <button (click)="save()" class="btn btn-primary btn-sm mt-3">Save Changes</button>
+        <button (click)="save()" class="btn btn-primary btn-sm">Save Changes</button>
     </div>
 </div>

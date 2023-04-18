@@ -26,11 +26,17 @@ export class MovieService {
   }
 
   update(movie: Movie | null | undefined): Observable<any> {
+    this.loggingService.add('MovieService: ' + movie!.name + ' updated! ');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
     };
     return this.http.put(this.apiMoviesUrl, movie, httpOptions);
+  }
+
+  add(movie: Movie): Observable<Movie> {
+    this.loggingService.add('MovieService: ' + movie!.name + ' added! ');
+    return this.http.post<Movie>(this.apiMoviesUrl, movie);
   }
 }
