@@ -39,4 +39,9 @@ export class MovieService {
     this.loggingService.add('MovieService: ' + movie!.name + ' added! ');
     return this.http.post<Movie>(this.apiMoviesUrl, movie);
   }
+
+  delete(movie: Movie): Observable<Movie> {
+    this.loggingService.add('MovieService: ' + movie!.name + ' deleted! ');
+    return this.http.delete<Movie>(this.apiMoviesUrl + '/' + movie.id);
+  }
 }
