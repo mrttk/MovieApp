@@ -11,7 +11,7 @@ export class MoviesComponent {
   movies: Movie[];
   selectedMovie: Movie;
 
-  constructor(private movieService:MovieService) {}
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -25,5 +25,15 @@ export class MoviesComponent {
     this.movieService.getMovies().subscribe((movies) => {
       this.movies = movies;
     });
+  }
+
+  add(name: string, imageUrl: string, description: string): void {
+    this.movieService
+      .add({
+        name,
+        imageUrl,
+        description,
+      } as Movie)
+      .subscribe((movie) => this.movies.push(movie));
   }
 }
