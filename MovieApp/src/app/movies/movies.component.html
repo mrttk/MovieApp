@@ -6,7 +6,7 @@
         <li *ngFor="let movie of movies" routerLink='/detail/{{movie.id}}' class="list-group-item">
             <span class="badge bg-primary">{{movie.id}}</span>
             {{movie.name}}
-            <button class="btn-close float-end"></button>
+            <button (click)="delete(movie)" class="btn-close float-end"></button>
         </li>
     </ul>
 </div>
